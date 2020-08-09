@@ -103,12 +103,24 @@ const updateDOM = () => {
 	updateSavedColumns();
 };
 
+// Show Add item input box
+const showInputBox = (column) => {
+	addBtns[column].style.visibility = 'hidden';
+	saveItemBtns[column].style.display = 'flex';
+	addItemContainers[column].style.display = 'flex';
+};
+
+// hide item input box
+
+const hideInputBox = (column) => {
+	console.log('column', column);
+	addBtns[column].style.visibility = 'visible';
+	saveItemBtns[column].style.display = 'none';
+	addItemContainers[column].style.display = 'none';
+};
+
 // Alllows arrays to reflect Drag and Drop items
-
 const rebuildArrays = () => {
-	console.log(backlogList.children);
-	console.log(progressList.children);
-
 	backlogListArray = [];
 	for (let i = 0; i < backlogList.children.length; i++) {
 		backlogListArray.push(backlogList.children[i].textContent);

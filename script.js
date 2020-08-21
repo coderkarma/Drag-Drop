@@ -113,7 +113,7 @@ const showInputBox = (column) => {
 // hide item input box
 
 const hideInputBox = (column) => {
-	console.log('column', column);
+	console.log('column', column );
 	addBtns[column].style.visibility = 'visible';
 	saveItemBtns[column].style.display = 'none';
 	addItemContainers[column].style.display = 'none';

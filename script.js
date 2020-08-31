@@ -103,6 +103,15 @@ const updateDOM = () => {
 	updateSavedColumns();
 };
 
+// Add to column List, reset textbox
+const addToColumn = (column) => {
+	const itemText = addItems[column].textContent;
+	const selectedArray = listArrays[column];
+	selectedArray.push(itemText);
+	addItems[column].textContent = '';
+	updateDOM();
+};
+
 // Show Add item input box
 const showInputBox = (column) => {
 	addBtns[column].style.visibility = 'hidden';
@@ -113,10 +122,11 @@ const showInputBox = (column) => {
 // hide item input box
 
 const hideInputBox = (column) => {
-	console.log('column', column );
+	console.log('column', column);
 	addBtns[column].style.visibility = 'visible';
 	saveItemBtns[column].style.display = 'none';
 	addItemContainers[column].style.display = 'none';
+	addToColumn(column);
 };
 
 // Alllows arrays to reflect Drag and Drop items
